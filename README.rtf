@@ -1,0 +1,182 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue255;\red0\green0\blue0;
+}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c0\c0\c100000;\csgray\c0;
+}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid101\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid201\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid202\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li1440\lin1440 }{\listname ;}\listid3}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}}
+\margl1440\margr1440\vieww19600\viewh13080\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\b\fs28 \cf2 \expnd0\expndtw0\kerning0
+Spatial single cell analysis of proteins in 2D human gastruloids using iterative immunofluorescence
+\f1\b0\fs24 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 Current Protocols\
+\
+
+\f0\b This code can be downloaded without data from :
+\f1\b0 \
+https://github.com/idse/6i\
+
+\f0\b and with data from:
+\f1\b0 \
+\pard\pardeftab720\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://www.dropbox.com/sh/edz56lj4teyb1pq/AACPhzhPmPCoozVprSSsDttWa?dl=0"}}{\fldrslt \cf3 \expnd0\expndtw0\kerning0
+\ul \ulc3 https://www.dropbox.com/sh/edz56lj4teyb1pq/AACPhzhPmPCoozVprSSsDttWa?dl=0}}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+
+\f0\b This code has been tested on the following systems:
+\f1\b0 \
+\
+Matlab\
+	Requires Image Processing Toolbox, Computer Vision Toolbox\
+	Tested on:\
+	2021a\
+		- MacOS 10.15.7\
+	2022a \
+		- MacOS 12.6.3\
+	2023a\
+		- Windows 11\
+\
+Python v3.8.0\
+For Macs:\
+	Mplex_analysis environment\
+		- MacOS 10.15.7\
+		- MacOS 12.6.3\
+For Windows:\
+	Mplex_analysis_windows\
+		- Windows 10\
+	cellpose_environment\
+		- Windows 10\
+\
+
+\f0\b How to create python environments
+\f1\b0 \
+\
+Macs: Mplex_analysis environment installation\
+	Install anaconda\
+	open terminal \
+	Navigate to \'93code\'94 folder	cd /[Folder]/code\
+	enter: \cf2 \expnd0\expndtw0\kerning0
+conda env create -f Mplex_analysis.yml\
+	(Cellpose included in Mplex_analysis.yml)\
+\cf0 \kerning1\expnd0\expndtw0 Windows: Mplex_analysis environment installation \
+	Install anaconda\
+	open anaconda prompt\
+	Navigate to \'93code\'94 folder	cd /[Folder]/code\
+	enter: \cf2 \expnd0\expndtw0\kerning0
+conda env create -f Mplex_analysis_windows.yml\
+\cf0 \kerning1\expnd0\expndtw0 	enter: \cf2 \expnd0\expndtw0\kerning0
+conda env create -f cellpose_environment.yml\cf0 \kerning1\expnd0\expndtw0 \
+	\
+
+\f0\b Image stitching:
+\f1\b0 \
+For your own experiment, copy stitchImages.m into each round subdirectory, run this script from each subdirectory. Script assumes 6x4 grid pattern\
+\
+
+\f0\b Alignment:
+\f1\b0 \
+\pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\li720\fi-720\pardirnatural\partightenfactor0
+\ls1\ilvl0\cf0 {\listtext	1.	}Run AlignRounds.m\
+{\listtext	2.	}Optional: looks at overlays with makeIFOverlays.m\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+
+\f0\b Segmentation:
+\f1\b0 \
+ilastik - (1.3.3post3-OSX, or 1.4.0 OSX) see instructions in paper\
+Cellpose - copy \cf4 \CocoaLigature0 segmentation_cellpose.ipynb into RD1 data folder\
+		** for Windows create cellpose environment separately \
+\
+\pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\li720\fi-720\pardirnatural\partightenfactor0
+\ls2\ilvl0\cf0 \CocoaLigature1 {\listtext	1.	}Execute ilastik segementation\
+{\listtext	2.	}Execute cellpsoe segmentation (for Windows activate cellpose environment, for Mac activate Mplex_analysis)\
+{\listtext	3.	}Run combineSegmentations.m\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+
+\f0\b Quantification
+\f1\b0 \
+\pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\li720\fi-720\pardirnatural\partightenfactor0
+\ls3\ilvl0\cf0 {\listtext	1.	}Run SingleCellQuantification.m\
+\pard\tx940\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\li1440\fi-1440\pardirnatural\partightenfactor0
+\ls3\ilvl1\cf0 {\listtext	\uc0\u8259 	}script will output cdv into data subfolder\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+
+\f0\b Single Cell Analysis
+\f1\b0 \
+\cf2 \expnd0\expndtw0\kerning0
+\
+Activate environment\
+	enter: conda activate Mplex_analysis\
+	(enter: conda deactivate to deactivate environment)\
+\
+\cf0 \kerning1\expnd0\expndtw0 Open  \cf4 \CocoaLigature0 MultiplexedSCAnalysis.ipynb, run code in order\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \CocoaLigature1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+
+\f0\b \cf0 Content of code folder
+\f1\b0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+** asterisks indicate instruction to copy files when running tutorial on tutorial images\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+Code                              folder\
+|\
+|\'97 \cf4 \CocoaLigature0 AlignRounds.m	\
+\cf0 \CocoaLigature1 |\'97 \cf2 \expnd0\expndtw0\kerning0
+cellpose_environment.yml\cf4 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+\cf0 \CocoaLigature1 |\'97 \cf4 \CocoaLigature0 combineSegmentations.m\
+\cf0 \CocoaLigature1 |\'97 \cf4 \CocoaLigature0 makeIFOverlays.m	\cf0 \CocoaLigature1 \
+|\'97 \cf4 \CocoaLigature0 Mplex_analysis.yml\
+\cf0 \CocoaLigature1 |\'97 Mplex_analysis_windows.yml\
+|\'97 MultiplexedSCAnalysis.ipynb\
+|\'97 segmentation_cellpose.ipynb\
+|\'97 \cf4 \CocoaLigature0 singleCellQuantification.m\cf0 \CocoaLigature1 \
+|\'97 \cf4 \CocoaLigature0 stitchImages.m\
+\cf0 \CocoaLigature1 |\'97 \cf4 \CocoaLigature0 Transfer.m\cf0 \CocoaLigature1 \
+|-- classes                       folder\
+|   |-- Colony.m\
+|   |-- Metadata.m\
+|   |-- Position.m\
+|-- data                             folder\
+|   |-- 230110_6i9rd_exp20_RD1_SMAD23_pAKT_SOX17               folder\
+|         |-- [230110_6i9rd_exp20_RD1_SMAD23_pAKT_SOX17.nd2] x 24      images\
+|         |-- ** COPY stitchImages.m here\
+|         |-- ** COPY segmentation_cellpose.ipynb\
+|   |-- 230111_6i9rd_exp20_RD2_GATA3_OTX2_LEF1 folder\
+|         |-- [230111_6i9rd_exp20_RD2_GATA3_OTX2_LEF1.nd2] x 24             images\
+|         |-- ** COPY stitchImages.m here\
+|   |-- sample_segmentations folder\
+|         |-- [images]\
+|   |-- 230713_CP_alldata.csv   \
+|-- functions                           folder\
+|   |-- external                        folder\
+|   |-- preprocessing              folder\
+|   |-- segmentation               folder\
+|   |-- cleanSubplot.m\
+|   |-- figurePosition.m\
+|   |-- readIntensityValues.m\
+|   |-- renameDuplicateChannels.m\
+|   |-- seglim.m\
+|   |-- stitchedlim.m\
+|-- processed_data                           folder\
+|   |-- 230110_6i9rd_exp20_RD1_SMAD23_pAKT_SOX17  folder\
+|        |\'97MIP                                                                          folder,  contains images\
+|   |--230111_6i9rd_exp20_RD2_GATA3_OTX2_LEF1         folder\
+|        |\'97MIP                                                                          folder,  contains images\
+|   |--230115_6i9rd_exp20_RD6_BCAT_TBX6_SMAD2       folder\
+|        |\'97MIP                                                                          folder, contains images\
+\
+\
+}

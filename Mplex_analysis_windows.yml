@@ -1,0 +1,30 @@
+name: Mplex_analysis
+channels: 
+  - conda-forge 
+dependencies: 
+  - jupyterlab
+  - notebook
+  - matplotlib
+  - python==3.7.11
+  - scipy
+  - seaborn
+  - opencv
+  - pip
+  - scikit-image
+  - graphtools
+  - umap-learn
+  - pip:
+    - cellpose
+    - scanpy 
+    - nd2reader
+    - glob2
+    - graphtools
+    - scprep
+    - PhenoGraph
+    - louvain
+    - gseapy
+    - anndata
+    - plotly
+
+
+
